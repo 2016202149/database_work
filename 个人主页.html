@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>个人主页</title>
+	<style type="text/css">
+	a:link { text-decoration: none;color: blue}
+　　a:active { text-decoration:blink}
+　　a:hover { text-decoration:underline;color: red} 
+　　a:visited { text-decoration: none;color: green}
+	#page{
+		border:1px solid:black;
+	}
+	.WB_top{
+		position:relative;
+		top:10px;
+		left:40px;
+		height:60px;
+		width:1440px;
+		overflow:hidden;
+		border:1px solid black;
+		border-radius:10px;
+	}
+	.WB_top_logo{
+		position:relative;
+		left:10px;
+		top:3px;
+		height:50px;
+		width:55px;
+		border-radius:5px;
+	}
+	.WB_top_log1{
+		position:relative;
+		left:1000px;
+		top:-10px;
+		text_decoration:none;
+		font-family:YouYuan;
+	}
+	.WB_top_log2{
+		position:relative;
+		top:-10px;
+		left:1010px;
+		text_decoration:none;
+		font-family:YouYuan;
+	}
+	.WB_left{
+		position:relative;
+		top:65px;
+		left:80px;
+		height:400px;
+		width:400px;
+		border-radius:10px;
+	}
+	.WB_left_mypic{
+		position:relative;
+		top:50px;
+		left:50px;
+		height:250px;
+		width:250px;
+        border-radius:50%;		
+	}
+	.WB_left_friend{
+		position:relative;
+		top:60px;
+		left:65px;
+		font-family:YouYuan;
+		font-weight:bold;
+	}
+	.WB_left_fans{
+		position:relative;
+		top:60px;
+		left:115px;
+		font-family:YouYuan;
+		font-weight:bold;
+	}
+	.WB_left_weibo{
+		position:relative;
+		top:60px;
+		left:165px;
+		font-family:YouYuan;
+		font-weight:bold;
+	}
+	.WB_right{
+	    position:relative;
+		top:-350px;
+		left:600px;
+		width:800px;
+		border-radius:5px;
+		background-color:#97CBFF;
+		overflow:auto;
+	}
+	.WB_right_textarea{
+		position:relative;
+		top:3px;
+		left:5px;
+		height:150px;
+		width:785px;
+		border-radius:20px;
+	}
+	.WB_right_handin{
+		position:relative;
+		left:750px;
+		border-radius:3px;
+		background-color:#97CBFF;
+		border:none;
+		border-bottom-color:#0080FF;
+		font-family:YouYuan;
+	}
+	.date_time{
+		position:relative;
+		left:500px;
+		font-family:YouYuan;
+		font-size:10px;
+		font-weight:200;
+	}
+	</style>
+    <script type="text/javascript">
+	    var num=1;
+		function fuc(){
+			var today=new Date();
+			var s=today.getFullYear()+"年"
+					+today.getMonth()+"月"
+					+today.getDate()+"日"
+					+today.getHours()+"时"
+					+today.getMinutes()+"分"
+					+today.getSeconds()+"秒"
+					+"\t星期"+today.getDay();
+			var txt=document.getElementById('num1_textarea').value;
+			var newdiv=document.createElement('div');
+			newdiv.id=num;
+			newdiv.class="WB_right_newdiv";
+			newdiv.innerHTML=txt+"</br><b class=date_time>"+s+"</b>";
+			var nodediv=document.getElementById('num1_div');
+			nodediv.parentNode.insertBefore(newdiv,nodediv.nextSibling);
+			num=num+1;
+			
+			
+		}
+		</script>
+	</head>
+<body background="background_01.jpg">
+	<div class="WB_top">
+		<a class="WB_top_logo"><img class="WB_top_logo" src="logo_01.jpg"></a>
+		<a class="WB_top_log1" href="登录入口.html">登陆</a>
+		<a class="WB_top_log2" href="注册页面.html">注册</a>
+	</div>
+	<div class="WB_left">
+		<a href="注册页面.html"><img class="WB_left_mypic" src="mypic_01.jpg"></a><br>
+		<a class="WB_left_friend" href="#">关注</a>
+		<a class="WB_left_fans" href="#">粉丝</a>
+		<a class="WB_left_weibo" href="#">微博</a>
+	</div>
+	<div class="WB_right">
+		<div class="WB_right_item" id="num1_div">
+			<textarea class="WB_right_textarea" id="num1_textarea" name="text" maxlength="140"></textarea>
+			<button class="WB_right_handin" id="num1_button" type="button" onclick="fuc()"><b>发布</b></button>
+		</div>
+	</div>
+</body>
+</html>
